@@ -10,12 +10,12 @@
 </head>
 
 <body>
-    <div id="player"></div>
-
     <form id="searchForm">
-        <input type="search" id="ytSearch" value="TRiDENT" />
+        <input type="search" id="ytSearch" placeholder="検索または入力"
+            style="width: 700px; padding: 10px; color: #7d7d7d; font-family: 'Times New Roman', Times, serif;font-size: 16px;" />
         <button id="searchBtn">検索</button>
     </form>
+    <div id="player"></div>
     <nav>
         <ul>
             <div class="flex">
@@ -34,6 +34,7 @@
                 <option value="We__CnrYa9U">DISTINATION</option>
                 <option value="I6ld4ecEp7s">IMAGINATION</option>
                 <option value="azQVVhMUz58">Continue</option>
+                <option value="jWQx2f-CErU">aespa 에스파 'Whiplash' MV</option>
             </select>
             </li>
             <li>
@@ -167,13 +168,16 @@
         onMuteBtn.addEventListener('click', function () {
             onMute();
             let icon = onMuteBtn.querySelector('i');
+            let text = onMuteBtn.querySelector('span');
 
-            if (icon.class = list.contains('fa-volume-off')) {
+            if (icon.classList.contains('fa-volume-off')) {
                 icon.classList.remove('fa-volume-off');
-                icon.classList.add('fa-volume-on');
+                icon.classList.add('fa-volume-xmark');
+                text.textContent = 'ミュート解除';
             } else {
-                icon.classList.remove('fa-volume-on');
+                icon.classList.remove('fa-volume-xmark');
                 icon.classList.add('fa-volume-off');
+                text.textContent = 'ミュート';
             }
         });
 
